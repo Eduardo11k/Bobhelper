@@ -249,10 +249,6 @@ async def commands_list(ctx):
     except discord.Forbidden:
         await ctx.send("⚠️ I couldn't send you a DM. Please enable direct messages.")
 
-
-if TOKEN is None:
-    print("Error: TOKEN environment variable not set!")
-    exit(1)
 bot.run(TOKEN)
 
 

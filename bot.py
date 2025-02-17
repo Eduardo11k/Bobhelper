@@ -251,7 +251,15 @@ async def commands_list(ctx):
 
 bot.run(TOKEN)
 
+async def reconnect_bot():
+    while True:
+        try:
+            await bot.start("SEU_TOKEN")
+        except Exception as e:
+            print(f"Erro detectado: {e}")
+            await asyncio.sleep(5)  # espera 5 segundos antes de tentar reconectar
 
+asyncio.run(reconnect_bot())
 
 
 
